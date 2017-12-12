@@ -61,6 +61,7 @@ public class WordCount  {
         FileUtil.deleteDir("output");
         Configuration conf = new Configuration();
 
+        //String[] otherArgs = new String[]{"input/dream.txt","output"};
         String[] otherArgs = new String[]{"hdfs://localhost:9000/user/wzy/input/dream.txt","hdfs://localhost:9000/user/wzy/output"};
         if (otherArgs.length != 2) {
             System.err.println("Usage:Merge and duplicate removal <in> <out>");
