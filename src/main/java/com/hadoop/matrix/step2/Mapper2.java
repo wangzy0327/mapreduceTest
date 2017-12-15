@@ -73,7 +73,7 @@ public class Mapper2 extends Mapper<LongWritable,Text,Text,Text> {
                 String value_matrix1 = column_value_matrix1.split("_")[1];
                 //遍历右矩阵的每一行每一列
                 for(String column_value_matrix2:column_value_array_matrix2){
-                    if(column_matrix1 == column_value_matrix2.split("_")[0]){
+                    if(column_matrix1.equals(column_value_matrix2.split("_")[0])){
                         String value_matrix2 = column_value_matrix2.split("_")[1];
                         result += Integer.valueOf(value_matrix1)*Integer.valueOf(value_matrix2);
                     }
