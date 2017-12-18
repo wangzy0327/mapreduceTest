@@ -13,9 +13,11 @@ import java.io.IOException;
 
 public class MR1 {
     //输入文件相对路径
-    private static String inPath = "/user/wzy/matrix/step1_input/matrix2.txt";
+    //private static String inPath = "/user/wzy/matrix/step1_input/matrix2.txt";
+    private static String inPath = "matrix/step1_input/matrix2.txt";
     //输出文件相对路径
-    private static String outPath = "/user/wzy/matrix/step1_output";
+    //private static String outPath = "/user/wzy/matrix/step1_output";
+    private static String outPath = "matrix/step1_output";
     //hdfs文件地址
     private static String hdfs ="hdfs://localhost:9000";
     public int run(){
