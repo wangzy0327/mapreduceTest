@@ -17,9 +17,11 @@ import java.util.Iterator;
 public class WordCount  {
 
     //输入文件相对路径
-    private static String inPath = "/user/wzy/input/dream.txt";
+    //private static String inPath = "/user/wzy/input/dream.txt";
+    private static String inPath = "input/dream.txt";
     //输出文件相对路径
-    private static String outPath = "/user/wzy/output";
+    //private static String outPath = "/user/wzy/output";
+    private static String outPath = "output";
     //hdfs文件地址
     private static String hdfs ="hdfs://localhost:9000";
 

@@ -14,12 +14,15 @@ import java.net.URISyntaxException;
 
 public class MR2 {
     //输入文件路径
-    private static String inPath = "/user/wzy/matrix/step2_input/matrix1.txt";
+    //private static String inPath = "/user/wzy/matrix/step2_input/matrix1.txt";
+    private static String inPath = "matrix/step2_input/matrix1.txt";
     //输出文件路径
-    private static String outPath = "/user/wzy/matrix/output";
+    //private static String outPath = "/user/wzy/matrix/output";
+    private static String outPath = "matrix/output";
     //设置缓存路径
     //这样让路径直接找输出矩阵所在的文件，它的别名才起作用
-    private static String cache = "/user/wzy/matrix/step1_output/part-r-00000";
+    //private static String cache = "/user/wzy/matrix/step1_output/part-r-00000";
+    private static String cache = "matrix/step1_output/part-r-00000";
     //hdfs文件地址
     private static String hdfs = "hdfs://localhost:9000";
     public static int run(){
