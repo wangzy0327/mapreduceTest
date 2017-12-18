@@ -14,7 +14,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import java.io.IOException;
 import java.util.Iterator;
 
-public class WordCount  {
+public class WordCount {
 
     //输入文件相对路径
     //private static String inPath = "/user/wzy/input/dream.txt";
@@ -23,7 +23,7 @@ public class WordCount  {
     //private static String outPath = "/user/wzy/output";
     private static String outPath = "output";
     //hdfs文件地址
-    private static String hdfs ="hdfs://localhost:9000";
+    private static String hdfs = "hdfs://localhost:9000";
 
     public static class TokenizerMapper extends
             Mapper<Object, Text, Text, IntWritable> {
@@ -35,10 +35,10 @@ public class WordCount  {
                 throws IOException, InterruptedException {
             String[] tokenStr = new String(value.toString()).split("\\s+");
             //StringTokenizer itr = new StringTokenizer(value.toString());
-            for(int tmp = 0;tmp<tokenStr.length;tmp++){
+            for (int tmp = 0; tmp < tokenStr.length; tmp++) {
                 this.word.set(tokenStr[tmp]);
                 context.write(this.word, one);
-                System.out.println("$"+" "+this.word+" "+one);
+                System.out.println("$" + " " + this.word + " " + one);
             }
 //            while (i<tokenStr.length) {
 //
@@ -61,7 +61,7 @@ public class WordCount  {
             }
             this.result.set(sum);
             context.write(key, this.result);
-            System.out.println("#"+" "+key+" "+this.result);
+            System.out.println("#" + " " + key + " " + this.result);
         }
     }
 
@@ -70,7 +70,7 @@ public class WordCount  {
 
         Configuration conf = new Configuration();
         //设置hdfs地址
-        conf.set("fs.defaultFS",hdfs);
+        conf.set("fs.defaultFS", hdfs);
         FileSystem fs = FileSystem.get(conf);
         Path inputPath = new Path(inPath);
         Path outputPath = new Path(outPath);
@@ -93,7 +93,7 @@ public class WordCount  {
         FileInputFormat.addInputPath(job, inputPath);
 
         //如果路径存在则删除，否则不删除
-        fs.delete(outputPath,true);
+        fs.delete(outputPath, true);
 
         FileOutputFormat.setOutputPath(job, outputPath);
         System.exit(job.waitForCompletion(true) ? 0 : 1);
